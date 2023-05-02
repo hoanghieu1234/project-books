@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link-font-awesome-cdn-link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- link-swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="User.css">
+    <title>cart</title>
+</head>
+<body>
+         <!-- header section starts  -->
+    <header class="header">
+
+        <div class="header-1">
+
+            <a href="#" class="logo"> <i class="fas fa-book"></i> Store-Books</a>
+
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search-here" id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <div class="shopping">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <span class="quantity">0</span>
+                </div>
+                <a href="#" class="fas fa-heart"></a>
+                <div id="login-btn" class="fas fa-user"></div>
+            </div>
+        </div>
+
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="./User.html">home</a>
+                <a href="#featured">featured</a>
+                <a href="#arrivals">arrivals</a>
+                <a href="#reviews">reviews</a>
+                <a href="#blogs">blogs</a>
+            </nav>
+        </div>
+    </header>
+    <!-- header section ends -->
+
+    <!-- bottom navbar -->
+    <!-- khi respon 768px nav-bot sẽ hiện ra -->
+    <nav class="bottom-navbar">
+        <a href="#home" class="fas fa-home"></a>
+        <a href="#featured" class="fas fa-list"></a>
+        <a href="#arrivals" class="fas fa-tags"></a>
+        <a href="#reviews" class="fas fa-comments"></a>
+        <a href="#blogs" class="fas fa-blog"></a>
+    </nav>
+
+    <!-- Login form -->
+    <div class="login-form-container">
+        <!-- close login -->
+        <div id="close-login-btn" class="fas fa-times"></div>
+
+        <form action="">
+            <h3>sign-in</h3>
+            <span>username</span>
+            <input type="email" name="" placeholder="enter your email" id="" class="box">
+            <span>password</span>
+            <input type="password" name="" placeholder="enter your password" id="" class="box">
+            <div class="checkbox">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me"> remember me</label>
+            </div>
+            <input type="submit" value="sign in" class="btn">
+            <p>forget password ? <a href="#">Click here</a></p>
+            <p>don't have an account ? <a href="#">Create one</a></p>
+        </form>
+    </div>
+
+    <!-- cart section start -->
+    <div class="small-container cart-page">
+        
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td id="cart-item">
+                    <div class="cart-info">
+                        <img src="./images/sach-1.jpg" alt="">
+                        <div>
+                            <p>Red Printed Tshirt</p>
+                            <small>Price: $50.00</small>
+                            <br> 
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>$50.00</td>
+            </tr>
+            <tr id="cart-item">
+                <td>
+                    <div class="cart-info">
+                        <img src="./images/sach-2.jpg" alt="">
+                        <div>
+                            <p>Red Printed Tshirt</p>
+                            <small>Price: $50.00</small>
+                            <br> 
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>$50.00</td>
+            </tr>
+        </table>
+
+        <div class="total-price">
+
+          <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>$35.00</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$230.00</td>
+                </tr>
+          </table>
+
+        </div>
+    </div>
+    <!-- cart section end -->
+    
+    <!-- footer section start -->
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>our locations</h3>
+                <a href=""> <i class="fas fa-map-marker-alt"></i>USA</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>VietNam</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>Singapore</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>Laos</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>ThaiLand</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>Brazil</a>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href=""> <i class="fas fa-arrow-right"></i>home</a>
+                <a href=""> <i class="fas fa-arrow-right"></i>featured</a>
+                <a href=""> <i class="fas fa-arrow-right"></i>arrivals</a>
+                <a href=""> <i class="fas fa-arrow-right"></i>reviews</a>
+                <a href=""> <i class="fas fa-arrow-right"></i>blogs</a>
+            </div>
+
+            <div class="box">
+                <h3>extra links</h3>
+                <a href=""> <i class="fas fa-arrow-right"></i>account info</a>
+                <a href=""> <i class="fas fa-arrow-right"></i>ordered items</a>
+                <a href=""> <i class="fas fa-arrow-right"></i>privacy policy</a>
+                <a href=""> <i class="fas fa-arrow-right"></i>payment method</a>
+                <a href=""> <i class="fas fa-arrow-right"></i>our services</a>
+            </div>
+
+            <div class="box">
+                <h3>contract info</h3>
+                <a href=""> <i class="fas fa-phone"></i>+123-456-789</a>
+                <a href=""> <i class="fas fa-phone"></i>+111-222-333</a>
+                <a href=""> <i class="fas fa-envelope"></i>hieunguyenhl123@gmail.com</a>
+                <img src="./images/wars.jpg" class="map" alt="">
+            </div>
+
+        </div>
+
+        <div class="share">
+            <a href="" class="fab fa-facebook-f"></a>
+            <a href="" class="fab fa-twitter"></a>
+            <a href="" class="fab fa-instagram"></a>
+            <a href="" class="fab fa-linkedin"></a>
+            <a href="" class="fab fa-pinterest"></a>
+        </div>
+
+        <div class="credit"> created by <span>Nguyễn Hoàng Hiếu</span> | all rights reserved! </div>
+
+    </section>
+    <!-- footer section end -->
+
+</body>
+<script src="./cart.js"></script>
+</html>

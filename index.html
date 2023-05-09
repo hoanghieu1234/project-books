@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link-css -->
-    <link rel="stylesheet" href="./User.css">
+    <link rel="stylesheet" href="User.css">
     <!-- link-font-awesome-cdn-link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- link-swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-        />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <title>Document</title>
 </head>
 <body>
@@ -22,24 +21,28 @@
             <a href="#" class="logo"> <i class="fas fa-book"></i> Store-Books</a>
 
             <form action="" class="search-form">
-                <input type="search" name="" placeholder="search-here" id="search-box">
-                <label for="search-box" class="fas fa-search"></label>
+                <input type="search" name="" placeholder="search-here" id="search-box" oninput="searchLocalStorage()">
+                <label for="search-box" class="fas fa-search" id="item-search"></label>
             </form>
 
             <div class="icons">
                 <div id="search-btn" class="fas fa-search"></div>
                 <div class="shopping">
-                    <a href="./cart.html" class="fas fa-shopping-cart"></a>
+                    <a href="" class="fas fa-shopping-cart"></a>
                     <span class="quantity">0</span>
                 </div>
                 <a href="#" class="fas fa-heart"></a>
-                <div id="login-btn" class="fas fa-user"></div>
+                <div id="login-btn" class="fas fa-user"></div> 
+                <div id="icon-logout">
+                   
+                </div> 
+                <div class="user-info"></div>
             </div>
         </div>
 
         <div class="header-2">
             <nav class="navbar">
-                <a href="./User.html">home</a>
+                <a href="./index.html">home</a>
                 <a href="#featured">featured</a>
                 <a href="#arrivals">arrivals</a>
                 <a href="#reviews">reviews</a>
@@ -58,28 +61,50 @@
         <a href="#reviews" class="fas fa-comments"></a>
         <a href="#blogs" class="fas fa-blog"></a>
     </nav>
+        <!-- Login form -->
+        <div class="login-form-container">
+            <!-- close login -->
+            <div id="close-login-btn" class="fas fa-times"></div>
 
-    <!-- Login form -->
-    <div class="login-form-container">
-        <!-- close login -->
-        <div id="close-login-btn" class="fas fa-times"></div>
-
-        <form action="">
-            <h3>sign-in</h3>
-            <span>username</span>
-            <input type="email" name="" placeholder="enter your email" id="" class="box">
-            <span>password</span>
-            <input type="password" name="" placeholder="enter your password" id="" class="box">
-            <div class="checkbox">
-                <input type="checkbox" name="" id="remember-me">
-                <label for="remember-me"> remember me</label>
-            </div>
-            <input type="submit" value="sign in" class="btn">
-            <p>forget password ? <a href="#">Click here</a></p>
-            <p>don't have an account ? <a href="#">Create one</a></p>
-        </form>
-    </div>
-
+            <form action="" id="form-login">
+                <h3>sign-in</h3>
+                <span>username</span>
+                <input type="email" name="" placeholder="enter your email" id="email" class="box">
+                <span>password</span>
+                <input type="password" name="" placeholder="enter your password" id="password" class="box">
+                <p class="error" id="error" style="color: red;"></p>
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="remember-me">
+                    <label for="remember-me"> remember me</label>
+                </div>
+                <input type="submit" value="sign in" class="btn" id="input-login">
+                <p>forget password ? <a href="#">Click here</a></p>
+                <p>don't have an account ? <a href="#" class="links">Create Account</a></p>
+            </form>
+        </div>
+       <!-- Register -->
+        <div class="regist-form-container">
+               <!-- close login -->
+               <div id="close-regist-btn" class="fas fa-times"></div>
+            <form action="" id="regist-form">
+                <h3>Register</h3>
+                <span>username</span>
+                <input type="text" name="" placeholder="enter yourname" id="username" class="box">
+                <p class="error" id="error-username" style="color: red;"></p>
+                <span>email</span>
+                <input type="email" name="" placeholder="enter your email" id="emailUser" class="box">
+                <p class="error" id="error-email" style="color: red;"></p>
+                <span>password</span>
+                <input type="password" name="" placeholder="enter your password" id="passwordUser" class="box">
+                <p class="error" id="error-password" style="color: red;"></p>
+                <span>repeat password</span>
+                <input type="password" name="" placeholder=" Repeat password" id="repeat-password" class="box">
+                <p class="error" id="error-repeatPassword" style="color: red;"></p>
+                <input type="submit" value="Register" class="btn">
+                <p>have already an account ? <a href="#" class="login-back">Login</a></p>
+            </form>
+        </div>
+   
     <!-- home section starts -->
 
     <section class="home" id="home">
@@ -154,9 +179,9 @@
 
         <div class="featured-slider">
 
-            <div class="swiper-wrapper">
-                <!-- box-1 -->
-                <div class="swiper-slide box">
+            <div class="swiper-wrapper" id="product-user">
+                <!--  box-1 -->
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -172,7 +197,7 @@
                     </div>
                 </div>
                 <!-- box-2 -->
-                <div class="swiper-slide box">
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -188,7 +213,7 @@
                     </div>
                 </div>
                 <!-- box-3 -->
-                <div class="swiper-slide box">
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -204,7 +229,7 @@
                     </div>
                 </div>
                 <!-- box-4 -->
-                <div class="swiper-slide box">
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -221,7 +246,7 @@
                     </div>
                 </div>
                 <!-- box-5 -->
-                <div class="swiper-slide box">
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -238,7 +263,7 @@
                     </div>
                 </div>
                 <!-- box-6 -->
-                <div class="swiper-slide box">
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -255,7 +280,7 @@
                     </div>
                 </div>
                 <!-- box-7 -->
-                <div class="swiper-slide box">
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -272,7 +297,7 @@
                     </div>
                 </div>
                 <!-- box-8 -->
-                <div class="swiper-slide box">
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -289,7 +314,7 @@
                     </div>
                 </div>
                 <!-- box-9 -->
-                <div class="swiper-slide box">
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -306,7 +331,7 @@
                     </div>
                 </div>
                 <!-- box-10 -->
-                <div class="swiper-slide box">
+                <div class="swiper-slide box" id="product-box">
                     <div class="icons">
                         <a href="" class="fas fa-search"></a>
                         <a href="" class="fas fa-heart"></a>
@@ -321,7 +346,7 @@
                         <div class="price">$15.99 <span>$20.99</span></div>
                         <button class="btn" id="btn-add"> add to cart</button>
                     </div>
-                </div>
+                </div> 
 
             </div>
             
@@ -353,7 +378,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-1.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -370,7 +395,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-4.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -387,7 +412,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-2.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -404,7 +429,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-7.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -421,7 +446,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-8.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -445,7 +470,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-1.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -462,7 +487,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-2.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -479,7 +504,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-3.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -496,7 +521,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-4.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -513,7 +538,7 @@
 
                 <a href="" class="swiper-slide box">
                     <div class="image">
-                        <img src="./images/book-1.jpg" alt="">
+                        <img src="./images/sach-5.jpg" alt="">
                     </div>
                     <div class="content">
                         <h3>new arrivals</h3>
@@ -543,7 +568,7 @@
             <a href="#" class="btn">shop now</a>
         </div>
         <div class="image">
-            <img src="./images/shelf.png" alt="">
+            <img src="./images/sach-6.jpg" alt="">
         </div>
 
     </section>
@@ -563,7 +588,7 @@
 
                     <div class="swiper-slide box">
                         <div class="image">
-                            <img src="./images/shelf.png" alt="">
+                            <img src="./images/blog-1.jpg" alt="">
                         </div>
                         <div class="content">
                             <h3>blog title goes here</h3>
@@ -575,7 +600,7 @@
                     
                     <div class="swiper-slide box">
                         <div class="image">
-                            <img src="./images/shelf.png" alt="">
+                            <img src="./images/blog-2.jpg" alt="">
                         </div>
                         <div class="content">
                             <h3>blog title goes here</h3>
@@ -587,7 +612,7 @@
                     
                     <div class="swiper-slide box">
                         <div class="image">
-                            <img src="./images/shelf.png" alt="">
+                            <img src="./images/blog-3.jpg" alt="">
                         </div>
                         <div class="content">
                             <h3>blog title goes here</h3>
@@ -599,7 +624,7 @@
                      
                     <div class="swiper-slide box">
                         <div class="image">
-                            <img src="./images/shelf.png" alt="">
+                            <img src="./images/blog6..jpg" alt="">
                         </div>
                         <div class="content">
                             <h3>blog title goes here</h3>
@@ -611,7 +636,7 @@
                      
                     <div class="swiper-slide box">
                         <div class="image">
-                            <img src="./images/shelf.png" alt="">
+                            <img src="./images/blog7.jpg" alt="">
                         </div>
                         <div class="content">
                             <h3>blog title goes here</h3>
@@ -664,7 +689,7 @@
                     <a href=""> <i class="fas fa-phone"></i>+123-456-789</a>
                     <a href=""> <i class="fas fa-phone"></i>+111-222-333</a>
                     <a href=""> <i class="fas fa-envelope"></i>hieunguyenhl123@gmail.com</a>
-                    <img src="./images/wars.jpg" class="map" alt="">
+                    <img src="./images/map.jpg" class="map" alt="">
                 </div>
 
             </div>
@@ -683,9 +708,11 @@
     <!-- footer section end -->
 
     <!-- loader -->
-        
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="./User.js"></script>
-<script src="./cart.js"></script>
+<script src="User.js"></script>
+<script src="login.js"></script>
+<script src="./register.js"></script>
+<script src="details_cart.js"></script>
 </html>
+
